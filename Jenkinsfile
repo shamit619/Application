@@ -1,9 +1,12 @@
 pipeline {
     agent { label 'master' }
     stages {
-        stage('build') {
+        stage('ImageCreation') {
             steps {
-                echo "Hello World!"
+                echo "Downloading Sonatype/nexus3 image from docker hub....."
+            }
+            stage('Kube8Deployment') {
+                echo "Deploying nexus application using kubernetes.......
             }
         }
     }
